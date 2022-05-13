@@ -15,7 +15,7 @@ function getDataFromDB(idRecibido){
 }
 
 function ItemDetailContainer( {titulo} ) {
-
+  
     const { id } = useParams();
 
     let [pizza, setPizza] = useState({});

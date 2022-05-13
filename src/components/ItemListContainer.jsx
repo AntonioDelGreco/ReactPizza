@@ -5,22 +5,24 @@ import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
 
 
-function getDataFromDB(tasteid){
-    return new Promise ( ( resolve, reject ) => {
-        setTimeout(() => {
-            if (tasteid === undefined) resolve( pizzasData );
-            
-            const pizzaRecibida = pizzasData.filter( (pizza) => { return pizza.taste === tasteid });
-            resolve(pizzaRecibida);
-        }, 2000 );    
-    });
-}
-
 function ItemListContainer() {
 
     const { tasteid } = useParams();
 
     let [pizzas, setPizzas] = useState([]);
+
+
+    function getDataFromDB(tasteid){
+        return new Promise ( ( resolve, reject ) => {
+            setTimeout(() => {
+    
+                if (tasteid === undefined) resolve( pizzasData );
+                
+                const pizzaRecibida = pizzasData.filter( (pizza) => { return pizza.taste === tasteid });
+                resolve(pizzaRecibida);
+            }, 2000 );
+        });
+    }
 
     
 
