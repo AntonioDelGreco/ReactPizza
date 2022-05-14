@@ -18,13 +18,12 @@ export function CartContextProvider({children}){
         const exists = cart.some(pizzaSola => pizzaSola.id === pizzasData.id);
         if (exists) {
             const laPizza = cart.map(cartItem => {
-                if (pizzaSola.id === cart.id){
-                    const updateCartItem = [...cartItem];
-                    updateCartItem.cant = cant;
-                    return updateCartItem;
+                if (pizzaSola.id === pizzasData.id){
+                    pizzaSola.cant++;
+                    return pizzaSola;
                 }
                 else{
-                    return cartItem;
+                    return pizzaSola;
                 }
             })
             setCart(laPizza);
