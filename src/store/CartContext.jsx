@@ -10,23 +10,22 @@ const useCartContext = () => useContext(CartContext);
 export function CartContextProvider({children}){
 
     const [cart, setCart] = useState([]);
-
-    
-    
+   
     const addToCart = (item, cant) => {
 
         const exists = cart.some(pizzaSola => pizzaSola.id === item.id);
         if (exists) {
-            const laPizza = cart.map(pizzaSola => {
+            const thePizza = cart.map(pizzaSola => {
                 if (pizzaSola.id === item.id){
-                    pizzaSola.cant++;
-                    return pizzaSola;
+                    const copyItem = {...pizzaSola}
+                    copyItem.cant += cant;
+                    return copyItem;
                 }
                 else{
                     return pizzaSola;
                 }
-            })
-            setCart(laPizza);
+            });
+            setCart(thePizza);
         }
         else{
             const newItem = {...item, cant};
