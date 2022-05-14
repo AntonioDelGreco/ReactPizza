@@ -2,6 +2,7 @@ import { createContext, useState } from "react";
 import { useContext } from 'react';
 
 
+
 const CartContext = createContext();
 const useCartContext = () => useContext(CartContext);
 
@@ -9,25 +10,30 @@ export function CartContextProvider({children}){
 
     const [cart, setCart] = useState([]);
 
-    const addToCart = (item, cant) => {
-        if (isInTheCart()){
-            const newCart = cart.map(cartItem => {
-                if (cartItem.id === item.id){
+    
+    
+    const addToCart = (item, cant, pizzaSola) => {
+
+        const exists = cart.some(pizzaSola => pizzaSola.id === cart.id);
+        if (exists) {
+            const laPizza = cart.map(cartItem => {
+                if (pizzaSola.id === cart.id){
                     const updateCartItem = [...cartItem];
                     updateCartItem.cant = cant;
                     return updateCartItem;
                 }
-                else
+                else{
                     return cartItem;
+                }
             })
-            setCart(newCart);
+            setCart(laPizza);
         }
         else{
             const newItem = {...item, cant};
             setCart([...cart, newItem]);
         }
     }
-
+   
     const removeFromCart = (id) => {
         const newCart = [...cart];
         const cartFilter = newCart.filter( item => {
@@ -35,15 +41,6 @@ export function CartContextProvider({children}){
         });
         setCart(cartFilter);
     }
-
-    function isInTheCart(){
-
-        const exists = cart.some(onePizza => onePizza.id === cart.id);
-
-        return exists
-    }
-  
-    
 
     const contextFunction = () => console.log('active context');
 
