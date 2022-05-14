@@ -1,6 +1,6 @@
 import { createContext, useState } from "react";
 import { useContext } from 'react';
-import pizzasData from '../data/pizzasData';
+
 
 
 
@@ -13,12 +13,12 @@ export function CartContextProvider({children}){
 
     
     
-    const addToCart = (item, cant, pizzaSola) => {
+    const addToCart = (item, cant) => {
 
-        const exists = cart.some(pizzaSola => pizzaSola.id === pizzasData.id);
+        const exists = cart.some(pizzaSola => pizzaSola.id === item.id);
         if (exists) {
-            const laPizza = cart.map(cartItem => {
-                if (pizzaSola.id === pizzasData.id){
+            const laPizza = cart.map(pizzaSola => {
+                if (pizzaSola.id === item.id){
                     pizzaSola.cant++;
                     return pizzaSola;
                 }
@@ -32,7 +32,6 @@ export function CartContextProvider({children}){
             const newItem = {...item, cant};
             setCart([...cart, newItem]);
         }
-        console.log(exists)
     }
     
    
