@@ -10,8 +10,10 @@ const useCartContext = () => useContext(CartContext);
 export function CartContextProvider({children}){
 
     const [cart, setCart] = useState([]);
+
    
     const addToCart = (item, cant) => {
+
 
         const exists = cart.some(pizzaSola => pizzaSola.id === item.id);
         if (exists) {
@@ -41,11 +43,14 @@ export function CartContextProvider({children}){
         });
         setCart(cartFilter);
     }
+ 
+    let totalCant = cart.reduce((acumulador, pizza) => acumulador + pizza.cant, 0); 
+    let totalPrice = cart.reduce((acumulador, pizza) => acumulador + pizza.price * pizza.cant, 0);
 
     const contextFunction = () => console.log('active context');
 
     return(
-        <CartContext.Provider value = {{ contextFunction, cart, addToCart, removeFromCart }}>
+        <CartContext.Provider value = {{contextFunction, cart, addToCart, removeFromCart, totalPrice, totalCant}}>
             {children}
         </CartContext.Provider>
     )

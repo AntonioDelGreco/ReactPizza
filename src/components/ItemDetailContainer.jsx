@@ -18,7 +18,7 @@ function ItemDetailContainer( {titulo} ) {
   
     const { id } = useParams();
 
-    let [pizza, setPizza] = useState({});
+    let [pizza, setPizza] = useState();
 
     
 
@@ -32,7 +32,13 @@ function ItemDetailContainer( {titulo} ) {
   return (
     <div className='contenedor'>
         <h1 style={{fontSize: '4rem', padding: '7rem'}} className='text-center'>Mas informacion</h1> 
-        <ItemDetail pizza = { pizza }/>
+        { pizza === undefined ? 
+            <div style={{overflow: 'hidden'}} className="d-flex justify-content-center">
+                <div style={{width: '13rem', height: '13rem', fontSize: '4rem'}} className="spinner-border" role="status">
+                </div>
+            </div>
+         :
+            <ItemDetail pizza = { pizza }/>} 
     </div>
     
   )

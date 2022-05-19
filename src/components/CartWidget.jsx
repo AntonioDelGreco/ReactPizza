@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 export default function CartWidget() {
     return (
         <li className="nav-item">
-            <Link className="nav-link active" to="/">
+            <Link className="nav-link active" to="/cart">
                 <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-shopping-cart hoverr" width="40" height="39" viewBox="0 0 24 24" style={{strokeWidth: "1.5", strokeLinecap: "round", strokeLinejoin: "round" }} stroke="#ffffff" fill="none">
                     <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                     <circle cx="6" cy="19" r="2" />
