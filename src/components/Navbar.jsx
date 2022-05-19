@@ -9,7 +9,7 @@ export default function Navbar() {
   contextFunction();
 
     return (
-      <nav className="navbar navbar-expand-lg navbar-dark sticky-top p-5 bg-dark" style={{fontWeight: 'bold'}}>
+      <nav className="navbar navbar-expand-lg navbar-dark sticky-top p-4 bg-dark" style={{fontWeight: 'bold'}}>
       <div className="container-fluid">
         <Link className="navbar-brand hoverr text-warning me-4" style={{letterSpacing: '1.5rem', fontSize: '3rem'}} to="/">Pizzeria 21</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,11 +32,9 @@ export default function Navbar() {
                     <li><Link style={{fontSize: "2rem"}} className="dropdown-item" to="/taste/carne">Carne</Link></li>
                   </ul>
             </li>
-            <CartWidget/>
           </ul>
-          <div className="d-flex">
-          <input className="form-control me-3 fs-5" type="search" placeholder="Buscar" aria-label="Search"/>
-          <button className="btn btn-outline-light fs-5" type='submit'>Buscar</button>
+          <div>
+            <CartWidget/>
           </div>
         </div>
       </div>

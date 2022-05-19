@@ -1,5 +1,5 @@
 import '../index.css';
-import pizzasData from '../data/pizzasData';
+import {getAllItems} from '../data/firebase';
 import React, {useState, useEffect} from 'react'
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
@@ -10,24 +10,10 @@ function ItemListContainer() {
     const { tasteid } = useParams();
 
     let [pizzas, setPizzas] = useState([]);
-
-
-    function getDataFromDB(tasteid){
-        return new Promise ( ( resolve, reject ) => {
-            setTimeout(() => {
-    
-                if (tasteid === undefined) resolve( pizzasData );
-                
-                const pizzaRecibida = pizzasData.filter( (pizza) => { return pizza.taste === tasteid });
-                resolve(pizzaRecibida);
-            }, 2000 );
-        });
-    }
-
     
 
     useEffect( () => {
-        getDataFromDB(tasteid).then( (data) => {
+        getAllItems(tasteid).then( (data) => {
         setPizzas(data)
         });
     }, [tasteid] );
