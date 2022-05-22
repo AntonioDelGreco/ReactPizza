@@ -13,7 +13,7 @@ const pizzasData = [{
     "text": "La segunda opción que os proponemos es una Pizza mexicana de carne elaborada con una base de tomate y queso cubierta con carne picada, cebolla y rodajas de aguacate. El toque picante adecuado lo decides tú añadiendo más o menos Tabasco o chiles jalapeños.",
     "image": "/assets/sabor2.jpeg"
   }, {
-    "id": 3,
+    "id": 3, 
     "name": "Pizza de pera, jamón y gorgonzola",
     "price": 121,
     "taste": "jamón",

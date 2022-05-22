@@ -1,5 +1,5 @@
 import '../index.css';
-import {getAllItems} from '../data/firebase';
+import {getAllItems, getItemsByTaste} from '../data/dataToFirestore';
 import React, {useState, useEffect} from 'react'
 import ItemList from './ItemList';
 import { useParams } from 'react-router-dom';
@@ -13,9 +13,16 @@ function ItemListContainer() {
     
 
     useEffect( () => {
-        getAllItems(tasteid).then( (data) => {
-        setPizzas(data)
-        });
+      if (tasteid === undefined){
+        getAllItems().then( (data) => {
+          setPizzas(data)
+          });
+      }  
+      else{
+        getItemsByTaste(tasteid).then( (data) => {
+          setPizzas(data)
+          });
+      }
     }, [tasteid] );
     
 
