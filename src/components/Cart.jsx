@@ -12,7 +12,7 @@ function Cart() {
                     <div className="card-body">
                       <h5 style={{fontSize: "3rem"}} className="card-title">{pizza.name}</h5>
                       <p style={{fontSize: "2rem"}} className="card-text">Tiene {pizza.cant} pizzas de este sabor en el carrito</p>
-                      <p style={{fontSize: "2rem"}} className="card-text">Una unica pizza de este sabor cuesta ${pizza.price * pizza.cant}</p>
+                      <p style={{fontSize: "2rem"}} className="card-text">El precio de la cantidad de pizzas de este sabor es de: ${pizza.price * pizza.cant}</p>
                       <img style={{width: '100%', height: '30rem'}} src={pizza.image} className="card-img-top" alt={pizza.name} />
                     </div>
                     <button onClick={() => removeFromCart(pizza.id)} className="btn btn-dark text-warning" style={{fontSize: "2rem"}}>Quitar del carrito</button>

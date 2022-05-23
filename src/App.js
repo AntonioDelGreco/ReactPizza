@@ -6,14 +6,12 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import Cart from './components/Cart';
 import { CartContextProvider } from './store/CartContext';
-import dataToFirestore from './data/dataToFirestore';
 
 
 export default function App() {
   return (
     <>
     <CartContextProvider>
-      <button onclick={dataToFirestore}>enviar datossssssssss</button>
       <BrowserRouter>   
         <Navbar/>
         <Routes>
