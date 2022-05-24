@@ -28,7 +28,9 @@ code {
   width: 90%;
   max-width: 120rem;
   margin: 0 auto;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  min-height: calc(100vh - 278.59px);
+ }
 
 .displays{
   display: flex;
@@ -36,7 +38,6 @@ code {
   justify-content: space-between;
   align-items: center;
 }
-
 
 .lacard{
   border-radius: 1rem;

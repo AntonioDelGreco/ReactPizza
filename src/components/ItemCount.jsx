@@ -26,7 +26,6 @@ function ItemCount(props) {
 
       <div className="d-grid gap-2">
       <button onClick={() => props.onAdd(count)} className="btn btn-dark text-warning" style={{fontSize: "2rem"}} type="button">Agregar al carrito</button>
-      {/* <button  className="btn btn-dark text-warning" style={{fontSize: "2rem"}} type="button">Quitar del carrito</button> */}
       </div>
 
     </div>

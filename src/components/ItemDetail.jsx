@@ -10,8 +10,7 @@ function ItemDetail( {pizza} ) {
 
       function onAdd(count){
         setIsInCart(true);
-        addToCart(pizza, count)
-        console.log('agregado al cart', pizza, count)
+        addToCart(pizza, count);
     };
 
   return (

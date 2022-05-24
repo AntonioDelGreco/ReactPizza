@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, query, where, getDocs, getDoc, doc} from 'firebase/firestore/lite'
+import { getFirestore, collection, query, where, getDocs, getDoc, doc, Timestamp, addDoc} from 'firebase/firestore/lite'
 
 const firebaseConfig = {
   apiKey: "AIzaSyAySGNJvKQtbcBf4jqHvxgnp09v8kX4VLA",
@@ -53,7 +53,15 @@ export async function getItem(id){
     }
 }
 
+export async function buyOrder(orderData){
+  const buyerTimestamp = Timestamp.now();
+  const includeDate = {...orderData, date: buyerTimestamp};
 
+  const miColeccion = collection(db, "orders");
+  const orderDoc = await addDoc(miColeccion, includeDate);
 
+  return {
+    id: orderDoc.id
+  }
+}
 
- 

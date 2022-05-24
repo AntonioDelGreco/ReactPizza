@@ -43,14 +43,18 @@ export function CartContextProvider({children}){
         });
         setCart(cartFilter);
     }
- 
+
+    const emptyCart = () => {
+        setCart([]);
+    };
+
     let totalCant = cart.reduce((acumulador, pizza) => acumulador + pizza.cant, 0); 
     let totalPrice = cart.reduce((acumulador, pizza) => acumulador + pizza.price * pizza.cant, 0);
 
     const contextFunction = () => console.log('active context');
 
     return(
-        <CartContext.Provider value = {{contextFunction, cart, addToCart, removeFromCart, totalPrice, totalCant}}>
+        <CartContext.Provider value = {{contextFunction, cart, addToCart, removeFromCart, totalPrice, totalCant, emptyCart}}>
             {children}
         </CartContext.Provider>
     )

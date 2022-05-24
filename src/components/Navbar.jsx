@@ -5,7 +5,7 @@ import useCartContext from '../store/CartContext';
 
 export default function Navbar() {
 
-  const { contextFunction } = useCartContext();
+  const { contextFunction, totalCant } = useCartContext();
   contextFunction();
 
     return (
@@ -35,6 +35,9 @@ export default function Navbar() {
           </ul>
           <div>
             <CartWidget/>
+          </div>
+          <div className="text-warning">
+            {totalCant}
           </div>
         </div>
       </div>
