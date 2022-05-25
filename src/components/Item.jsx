@@ -7,12 +7,12 @@ function Item( {pizza} ) {
   const urlPizza = `/pizza/${pizza.id}`;
 
   return (
-    <div style={{padding: "1rem"}}>
-        <div className="card text-white lacard bg-dark" style={{padding: "0.5rem"}}>
+    <div style={{margin: "1rem"}} className="border border-5 border-warning">
+        <div className="card text-white lacard bg-dark" style={{padding: "0.5rem", width: "30rem"}}>
        
             <img style={{borderRadius: "0.5rem"}} src={pizza.image} alt={pizza.name} />
             <div className="card-body">
-                <h5 className="card-title" style={{fontSize: "2rem", paddingBottom: "2rem", paddingTop: "1rem"}}>{pizza.name}</h5>
+                <h5 className="card-title" style={{fontSize: "2rem", marginBottom: "2rem", marginTop: "1rem"}}>{pizza.name}</h5>
                 <p style={{fontSize: "1.8rem", color: "wheat", fontWeight: "bold"}}>Precio: ${pizza.price}</p>
                 
             </div>

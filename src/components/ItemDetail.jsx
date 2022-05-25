@@ -16,7 +16,7 @@ function ItemDetail( {pizza} ) {
   return (
 
           <>
-          <div className="card mb-3 bg-dark text-white">
+          <div style={{margin: '10rem'}} className="card mb-3 bg-dark text-white border border-warning border-5">
           <div className="row g-0">
             <div className="col-md-4">
             <img className='img-fluid rounded-start ' style={{borderRadius: "0.5rem", width: "100%", height: "100%"}} src={pizza.image} alt={pizza.name} />
@@ -33,9 +33,12 @@ function ItemDetail( {pizza} ) {
 
         {
         isInCart?
-        <Link to="/cart"><button className='btn btn-dark' style={{width: "100%", fontSize: "2rem"}}>Ver el carrito</button></Link>
+        <div className="bg-dark border border-warning border-5 m-5">
+          <Link to="/cart" className='btn btn-dark text-warning' style={{width: "100%", fontSize: "2rem"}}>Ver el carrito</Link>
+          <Link to="/" className='btn btn-dark text-warning mt-2' style={{width: "100%", fontSize: "2rem"}}>Seguir comprando</Link>
+        </div>
         : 
-        <ItemCount onAdd={onAdd} initial={1}/>
+          <ItemCount onAdd={onAdd} initial={1}/>
         }
         </>
   )
