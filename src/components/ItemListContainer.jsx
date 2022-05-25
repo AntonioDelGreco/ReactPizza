@@ -28,8 +28,8 @@ function ItemListContainer() {
 
   return (
     
-    <div className='contenedor'>
-        <h1 style={{fontSize: '4rem', padding: '7rem'}} className='text-center'>Nuestros Sabores</h1>
+    <div className='contenedor bg-dark p-5 mt-5'>
+        <h1 style={{fontSize: '4rem', margin: '7rem', padding: "2rem"}} className='text-center bg-warning text-dark'>Nuestros Sabores</h1>
         <ItemList pizzas = { pizzas }/>
     </div>
   )
