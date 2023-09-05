@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, collection, query, where, getDocs, getDoc, doc, Timestamp, addDoc} from 'firebase/firestore/lite'
 
 const firebaseConfig = {
-  apiKey: import.meta.env.APIKEYFB,
-  authDomain: import.meta.env.AUTHDOMAINFB,
-  projectId: import.meta.env.PROJECTIDFB,
-  storageBucket: import.meta.env.STORAGEFB,
-  messagingSenderId: import.meta.env.MSGFB,
-  appId: import.meta.env.APPIDFB
+  apiKey: process.env.REACT_APP_APIKEYFB,
+  authDomain: process.env.REACT_APP_AUTHDOMAINFB,
+  projectId: process.env.REACT_APP_PROJECTIDFB,
+  storageBucket: process.env.REACT_APP_STORAGEFB,
+  messagingSenderId: process.env.REACT_APP_MSGFB,
+  appId: process.env.REACT_APP_APPIDFB
 };
   
   
