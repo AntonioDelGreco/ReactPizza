@@ -31,7 +31,7 @@ export default function Checkout() {
       buyOrder(order).then((respuesta)=>{
         setOrderId(respuesta.id);
         emptyCart();
-      });
+      }).catch(err => console.log(err));
     }, []);
 
 

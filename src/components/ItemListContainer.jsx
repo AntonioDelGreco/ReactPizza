@@ -14,14 +14,14 @@ function ItemListContainer() {
 
     useEffect( () => {
       if (tasteid === undefined){
-        getAllItems().then( (data) => {
+        getAllItems().then( data => {
           setPizzas(data)
-          });
+          }).catch(err => console.log(err));
       }  
       else{
         getItemsByTaste(tasteid).then( (data) => {
           setPizzas(data)
-          });
+          }).catch(err => console.log(err));
       }
     }, [tasteid] );
     

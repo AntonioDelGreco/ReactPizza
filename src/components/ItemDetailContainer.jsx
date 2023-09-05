@@ -17,7 +17,7 @@ function ItemDetailContainer( {titulo} ) {
     useEffect( () => {
         getItem(id).then( (data) => {
         setPizza(data)
-        });
+        }).catch(err => console.log(err));
     }, [id] );
     
 
